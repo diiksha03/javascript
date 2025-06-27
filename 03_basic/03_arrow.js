@@ -83,4 +83,3 @@ myArray.forEach(function (item) {
 // ✅ It accepts a callback function with current item
 
 
-//radheyradhey
