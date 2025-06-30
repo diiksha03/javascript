@@ -1,2 +1,2 @@
 # javascript
-this i my first tutorial for js
+revising js again
