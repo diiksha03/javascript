@@ -1,125 +1,82 @@
-let score= null
-console.log(typeof score);// 1 method
-console.log(typeof(score));//2 method
+// ✅ JavaScript Type Conversion + Operations — Full Notes
 
-let valueInNumber=Number(score)//conversion of string into number
-console.log(typeof valueInNumber);//
-console.log(valueInNumber);
+let score = "hitesh";
 
-//THINGS TO OBSERVE HERE:
-//"33"=> 33 number convert ho gya number mei
+// typeof tells the type of a variable
+console.log(typeof score);         // string
+console.log(typeof(score));        // string (same result)
 
-//"33abc"=> NaN
-//true=>1, false=>0
+// ❓ Convert string to number
+let valueInNumber = Number(score);
+console.log(typeof valueInNumber); // number
+console.log(valueInNumber);        // NaN ➤ because "hitesh" is not a valid number
 
+// ✅ Type Conversion Notes:
+// "33"      => 33      ✅ valid
+// "33abc"   => NaN     ❌ invalid
+// true      => 1
+// false     => 0
 
-let isLogged="hitesh"
-let booleanislogged=Boolean(isLogged)
-console.log(booleanislogged);
+// ✅ Convert string to boolean
+let isLoggedIn = "hitesh";
+let booleanIsLoggedIn = Boolean(isLoggedIn);
+console.log(booleanIsLoggedIn);    // true
 
-//THINGS TO OBSERVE HERE:
-//1=>true;0=> false
-//""=>false
-//"diksha"=> true
-
-let someno=33
-let stringinnumber=String(someno)
-console.log(stringinnumber);
-console.log(typeof stringinnumber);
-
-
-
-
-/*1. typeof Operator
-
-Variable ka data type batata hai
-Syntax: typeof value ya typeof(value)
-Note: typeof null = "object" (JavaScript ka bug)
+// Boolean Conversion Rules:
+// 1       => true
+// 0       => false
+// ""      => false (empty string)
+// "text"  => true (non-empty string)
 
 
-2. Number(value) – String/Boolean ko Number banata hai
+// ✅ Convert number to string
+let someNumber = 33;
+let stringNumber = String(someNumber);
+console.log(stringNumber);         // "33"
+console.log(typeof stringNumber); // string
 
-"33" → 33
-"33abc" → NaN
-true → 1
-false → 0
-null → 0
+// *********************** Operations ***********************
 
-
-3. Boolean(value) – True/False banata hai
-1, "text", " " → true
-0, "", null, undefined → false
-
-
-4. String(value) – Value ko String banata hai
-33 → "33"
-true → "true"
-null → "null"
-
-*/
-
-//***************** OPERATIONS *********** */
-// 🔹 Unary Operator (Negative)
 let value = 3;
-let negvalue = -value;              // -value → sign ulta ho gaya
-console.log(negvalue);              // Output: -3
+let negValue = -value;             // Unary negative
+console.log(negValue);             // -3
 
-// 🔹 String Concatenation
+// Arithmetic operations
+console.log(2 + 2);   // 4
+console.log(2 - 2);   // 0
+console.log(2 * 2);   // 4
+console.log(2 ** 3);  // 8 (Exponentiation)
+console.log(2 / 3);   // 0.666...
+console.log(2 % 3);   // 2 (Remainder)
 
+// ✅ String Concatenation
 let str1 = "hello";
-let str2 = "radheyradhey";
-let str3 = str1 + str2;             // dono strings jod gayi
-console.log(str3);                  // Output: helloradheyradhey
+let str2 = " hitesh";
+let str3 = str1 + str2;
+console.log(str3);    // "hello hitesh"
 
+// ✅ Type Coercion in JS (⚠️ tricky part)
+console.log("1" + 2);         // "12"
+console.log(1 + "2");         // "12"
+console.log("1" + 2 + 2);     // "122" ➤ left to right (string + number = string)
+console.log(1 + 2 + "2");     // "32"  ➤ (1+2=3) then 3+"2" = "32"
 
-// 🔹 Type Coercion Examples (mix of string + number)
+// ✅ Operator Precedence
+console.log((3 + 4) * 5 % 3); // 35 % 3 = 2
 
-console.log("1" + 2);               // Output: "12"
-// string + number → string
+// ✅ Special conversions
+console.log(+true);  // 1
+console.log(+"");    // 0
 
-console.log(1 + "2");               // Output: "12"
-// number + string → string
+// ✅ Chained assignment (bad practice, but works)
+let num1, num2, num3;
+num1 = num2 = num3 = 2 + 2;
+console.log(num1, num2, num3); // 4 4 4
 
-console.log("1" + 2 + 2);           // Output: "122"
+// ✅ Prefix increment
+let gameCounter = 100;
+++gameCounter;
+console.log(gameCounter); // 101
 
-// left to right: "1"+2 = "12", then "12"+2 = "122"   suru mei string to sabko string kar do
-
-console.log(1 + 2 + "2");           // Output: "32" baad mei string to phle addition phir string
-
-// 1+2 = 3, then 3 + "2" = "32" (number + string → string)
-
-
-// Arithmetic Operators → Math operations
-// + Add, - Subtract, * Multiply, / Divide, % Remainder
-
-// Assignment Operators → Value assign karna
-// = Assign, += Add & assign, -= Subtract & assign, *= Multiply & assign
-
-// Comparison Operators → Compare values
-// == Equal (value only), === Strict equal (value + type), != Not equal, >, <, >=, <=
-
-// Logical Operators → Conditions ke liye
-// && AND (dono true), || OR (koi ek true), ! NOT (ulta)
-
-// Ternary Operator → Short if-else
-// condition ? value_if_true : value_if_false
-// Example: age >= 18 ? "Adult" : "Minor"
-
-// typeof Operator → Data type check karne ke liye
-// Example: typeof "hello" → "string", typeof 5 → "number"
-
-// Type Coercion (String + Number) → Left to right execute hota hai
-// "1" + 2 → "12" (string), 1 + 2 + "3" → "33" (first number add, then string)
-
-
-
-//post and pre increment
-
-let x = 5;
-
-console.log(x++);  // Output: 5  
-// Post-increment: Pehle x ki current value print hoti hai (5), fir x = 6 ho jaata hai
-
-console.log(++x);  // Output: 7  
-// Pre-increment: Pehle x = x + 1 (6 → 7), fir new value print hoti hai (7)
-
+// 🔗 Deep-dive reference (not mandatory, advanced)
+// https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-conversion
