@@ -6,9 +6,7 @@ const myNumers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // 🔹 It returns a NEW array based on what you return inside map()
 
 // Example: Add 10 to each number
-// const newNums = myNumers.map((num) => {
-//     return num + 10;
-// });
+// const newNums = myNumers.map((num) => { return num + 10 });// scope lgya hai isliye return lgna jarure hai
 
 // ✅ Chaining map() and filter()
 const newNums = myNumers
