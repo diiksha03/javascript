@@ -29,9 +29,6 @@ JavaScript DOM Properties & Methods (Quick Notes)
 🛠️ Use when: You want to get or set the HTML structure.
 
 📌 Example:
-
-js
-Copy code
 document.getElementById("demo").innerHTML = "<b>Hello</b>";
 2. textContent
 ✅ Returns: All the text content, including hidden elements.
@@ -39,9 +36,6 @@ document.getElementById("demo").innerHTML = "<b>Hello</b>";
 🛠️ Use when: You need raw text without HTML tags.
 
 📌 Example:
-
-js
-Copy code
 document.getElementById("demo").textContent;
 3. innerText
 ✅ Returns: Only the visible text of the node.
@@ -58,9 +52,6 @@ document.getElementById("demo").innerText;
 ✅ Selects: The first matching element using a CSS selector.
 
 📌 Example:
-
-js
-Copy code
 document.querySelector(".my-class");
 5. querySelectorAll()
 ✅ Selects: All matching elements as a NodeList (like an array).
@@ -68,7 +59,7 @@ document.querySelector(".my-class");
 📌 Example:
 
 js
-Copy code
+
 document.querySelectorAll("p");
 ⚙️ Attributes
 6. getAttribute()
@@ -76,15 +67,11 @@ document.querySelectorAll("p");
 
 📌 Example:
 
-js
-Copy code
+
 let link = document.getElementById("myLink").getAttribute("href");
 7. setAttribute()
 ✅ Purpose: Sets/updates an attribute and its value.
 
 📌 Example:
-
-js
-Copy code
 document.getElementById("myLink").setAttribute("href", "https://google.com");
 <!--  -->
