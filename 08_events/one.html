@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Events - Full Notes</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+  <h2>Amazing image</h2>
+  <div>
+    <ul id="images">
+      <!-- Multiple Images with unique IDs -->
+      <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg" alt="photoshop"></li>
+      <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg" alt=""></li>
+      <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg" alt=""></li>
+      <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg" alt=""></li>
+      <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg" alt=""></li>
+      <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+  </div>
+
+<script>
+
+  /* 
+  ✅ 1. addEventListener():
+  → JavaScript ka method jo kisi HTML element par event lagata hai (like click, mouseover)
+  → Jab user woh event karta hai, ek function chalta hai
+  */
+
+  /* 
+  ✅ 2. Event Delegation:
+  → Jab hum parent element pe event listener lagate hain
+  → Aur uske andar ke child elements ke events handle karte hain
+  → Efficient hota hai, aur future elements ke liye bhi kaam karta hai
+  */
+
+  // 💡 Applying event delegation: <ul> par listener lagaya gaya hai
+  document.querySelector('#images').addEventListener('click', function(e) {
+
+    /*
+    ✅ e.target:
+    → Batata hai ki exactly kis element par user ne click kiya
+    */
+
+    console.log("Clicked tag:", e.target.tagName);
+
+    // Sirf image par click hua ho tab hi kaam kare
+    if (e.target.tagName === 'IMG') {
+
+      // Image ka id print karo
+      console.log("Image ID:", e.target.id);
+
+      /*
+      ✅ remove():
+      → Kisi element ko DOM se hata deta hai
+      */
+
+      // Image ke parent <li> ko remove karo
+      let removeIt = e.target.parentNode;
+      removeIt.remove();
+    }
+  });
+
+  /*
+  ✅ 3. Event Bubbling:
+  → Jab kisi nested element (child) par event hota hai
+  → Toh wo event automatically parent, grandparent tak bhi chala jata hai
+  → Is process ko bubbling kehte hain
+  */
+
+  /*
+  ✅ 4. stopPropagation():
+  → Event bubbling ko rokne ke liye use hota hai
+  → Agar tum nahi chahti ki event parent tak jaye, toh yeh use karo
+  */
+
+  // Example (commented):
+  // document.getElementById('owl').addEventListener('click', function(e) {
+  //   console.log("Owl image clicked.");
+  //   e.stopPropagation(); // Bubbling roki
+  // });
+
+  /*
+  ✅ 5. preventDefault():
+  → Browser ke default kaam ko rokta hai
+  → Jaise link open hona, form submit hona etc.
+  */
+
+  // Example (commented):
+  // document.getElementById('google').addEventListener('click', function(e) {
+  //   e.preventDefault(); // Link Google na khole
+  //   e.stopPropagation(); // Bubbling bhi roki
+  //   console.log("Google link clicked but prevented.");
+  // });
+
+  /*
+  ✅ 6. e.currentTarget:
+  → Wo element jisme listener laga hota hai
+  → Jabki e.target wo element hota hai jisme click hua
+  */
+
+  /*
+  ✅ 7. Event Capturing (Trickling Phase):
+  → Jab event top se bottom travel karta hai (parent to child)
+  → addEventListener ka 3rd argument agar "true" ho to capturing mode hota hai
+  → Default false hota hai (means bubbling)
+
+  🔁 Capturing:        document → html → body → parent → target
+  🔁 Bubbling:         target → parent → body → html → document
+  */
+
+  // Capturing example (run before bubbling if 3rd arg is true)
+  document.getElementById("images").addEventListener("click", function(){
+    console.log("Capturing Phase - UL triggered first (top to bottom)");
+  }, true); // 👈 true for capturing
+
+</script>
+</body>
+</html>
