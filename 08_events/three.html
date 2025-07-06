@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai and javascript</h1>
+    <button id="start"> Start</button>
+    <button id="stop">Stop</button>
+    
+</body>
+
+
+<script>
+    let interval=null;
+document.querySelector("#start").addEventListener("click",function(){
+    if(interval===null){
+        interval=setInterval(function(){
+            console.log("diksha",Date.now())
+        },1000);
+    }
+
+
+});
+document.querySelector("#stop").addEventListener("click",function(){
+    clearInterval(interval)
+    interval=null;
+    console.log("stopeed");
+}
+)
+
+
+
+// ✅ JS Notes: setInterval() and clearInterval()
+// ===============================================
+
+// ----------------------------
+// 🔁 setInterval()
+// ----------------------------
+// ➤ setInterval() repeats a task after a fixed time interval
+// ➤ It returns a timer ID, which is used to stop it later
+
+// ✅ Syntax:
+let intervalID = setInterval(callbackFunction, delayInMilliseconds);
+
+// ✅ Example:
+let count = 1;
+
+let intervalID1 = setInterval(() => {
+  console.log("🔁 setInterval running → Count:", count);
+  count++;
+}, 1000); // prints every 1 second
+
+// ----------------------------
+// 🛑 clearInterval()
+// ----------------------------
+// ➤ clearInterval() is used to stop a setInterval using its ID
+
+// ✅ Syntax:
+clearInterval(intervalID);
+
+// ✅ Example: Stop interval after 5 seconds
+setTimeout(() => {
+  clearInterval(intervalID1); // stops the repeating task
+  console.log("⛔ clearInterval called → Repeating stopped.");
+}, 5000);
+
+// Output:
+// 🔁 setInterval running → Count: 1
+// 🔁 setInterval running → Count: 2
+// 🔁 setInterval running → Count: 3
+// 🔁 setInterval running → Count: 4
+// 🔁 setInterval running → Count: 5
+// ⛔ clearInterval called → Repeating stopped.
+
+</script>
+</html>
