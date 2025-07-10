@@ -46,14 +46,27 @@
 //      console.log("❌ Cancelled before finish!");
 // }, 5000);
 
-const id=setInterval(() => {
-    const now=new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-  const minutes = now.getMinutes().toString().padStart(2, '0');
-  const seconds = now.getSeconds().toString().padStart(2, '0');
+// const id=setInterval(() => {
+//     const now=new Date();
+//     const hours = now.getHours().toString().padStart(2, '0');
+//   const minutes = now.getMinutes().toString().padStart(2, '0');
+//   const seconds = now.getSeconds().toString().padStart(2, '0');
 
-    console.log(`current time${minutes}:${seconds}`);
+//     console.log(`current time${minutes}:${seconds}`);
     
     
     
-},1000);
+// },1000);
+
+
+
+const id=setInterval(function(){
+  console.log("💧 Drink water!");
+
+},3000)
+const myid= setInterval(() => {
+   console.log("🧍‍♀️ Stretch your legs!");
+  
+}, 10000);
+
+
