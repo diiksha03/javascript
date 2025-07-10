@@ -1,0 +1,23 @@
+OOPs in JavaScript ka matlab hai Object-Oriented Programming (OOP) concepts in JavaScript.
+
+JavaScript traditionally ek prototype-based language thi, lekin ab modern JS (ES6+) mein class-based OOP bhi support hota hai.
+
+
+OOPs ke kuch basic concepts hain:
+1. **Classes**: Classes ek blueprint hoti hain objects banane ke liye.
+2. **Objects**: Objects class ka instance
+3. **Encapsulation**: Data aur methods ko ek saath bundle karna.
+4. **Inheritance**: Ek class dusri class
+se properties aur methods inherit kar sakti hai.
+5. **Polymorphism**: Ek method ka alag-alag objects par alag
+behaviour hona.
+6. **Abstraction**: Complex details ko hide karna aur sirf essential features dikhana.
+7. **Constructor**: Class ka special method jo object create karte waqt call hota hai.
+8. **Methods**: Functions jo class ke objects par operate karte hain.
+9. **Static Methods**: Class ke methods jo class ke instance
+par nahi, balki class par operate karte hain.
+10. **Getters/Setters**: Properties ko access aur modify karne ke li
+ye special methods.
+11. **Prototype**: JavaScript mein objects ka prototype hota hai, jisse inheritance
+aur method sharing hoti hai.
+12. **This Keyword**: Current object ko refer karta hai.
