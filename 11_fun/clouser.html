@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clouser</title>
+</head>
+
+<body style="background-color: rgb(202, 234, 234);">
+  <button id="orange">orange</button>
+  <button id="hotpink">hotpink</button>
+
+</body>
+<script>
+  // document.getElementById("orange").onclick=function(){
+  //   document.body.style.backgroundColor="orange"
+  // }
+  // document.getElementById("hotpink").onclick=function(){
+  //   document.body.style.backgroundColor="hotpink"
+  // }
+
+  function changecolor(color) {
+    return function () {
+      document.body.style.backgroundColor = `${color}`
+
+    }
+
+  }
+  document.getElementById('orange').onclick = changecolor('orange')
+
+    document.getElementById('hotpink').onclick = changecolor('hotpink')
+</script>
+
+</html>
